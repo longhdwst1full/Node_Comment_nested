@@ -13,7 +13,7 @@ const productValidate = Joi.object({
 const getProductList = async (req, res) => {
     try {
 
-        const result = await products.find();
+        const result = await products.find().populate("comments");
         if (result.length > 0) {
 
             return res.status(200).json(result);
@@ -40,8 +40,8 @@ const getProductOne = async (req, res) => {
 
 const add = async (req, res) => {
     try {
-        const validate = productValidate.validate(req.body, { abortEarly: false });
-        const { error } = validate
+        // const validate = productValidate.validate(req.body, { abortEarly: false });
+        // const { error } = validate
         // const a = error.details
 
         // const error_name = a.map(item => ({
@@ -49,7 +49,7 @@ const add = async (req, res) => {
         //     name: item.path[0]
         // }))
         // console.log(error_name)
-        if (!error) {
+        // if (!error) {
 
             const productAdd = await products.create(req.body);
             return res.status(200).json({
@@ -57,9 +57,9 @@ const add = async (req, res) => {
                 data: productAdd
             })
 
-        }
+        // }
 
-        return res.json({ error })
+        // return res.json({ error })
 
     } catch (error) {
         res.status(404).json({ message: "Không thêm đc" })
