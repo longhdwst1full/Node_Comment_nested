@@ -7,7 +7,7 @@ const routes = express.Router()
 
 
 routes.get("/products", getProductList)
-routes.get("/comments", getAllComment)
+routes.get("/comments/:id", getAllComment)
 routes.post("/users/add", createUser)
 routes.get("/users", getUsers)
 routes.post("/comments/add", createComment)

@@ -1,4 +1,4 @@
-import { Users } from "../model/comment"
+import { Users } from "../model/user"
 
 export const createUser = async (req, res) => {
     try {

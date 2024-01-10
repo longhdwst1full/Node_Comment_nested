@@ -1,10 +1,10 @@
 
 
-import mongose from "mongoose";
+import mongoose from "mongoose";
 
-mongose.connect("mongodb://localhost:27017/thi")
+mongoose.connect("mongodb://127.0.0.1:27017/thi")
 
-const products = new mongose.Schema({
+const products = new mongoose.Schema({
 
     name: {
         type: "string",
@@ -13,10 +13,10 @@ const products = new mongose.Schema({
 
     comments: [
         {
-            type: mongose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'Comment',
         },
     ]
 })
 
-export default mongose.model("products", products)
+export default mongoose.model("products", products)

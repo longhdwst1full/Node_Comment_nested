@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .comments{
+            padding: 2px;
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            margin-left: 10px;
+
+        }
+        .comments li{
+            /* list-style: none; */
+        }
+        .comment_me{
+            text-align: right;
+        }
+        .item_comment{
+display: flex;
+flex-direction: column;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 onclick="handleGetIdCmt(3)">Comment </h1>
+ 
+
+<div class="comments">
+    <li class="item_comment">
+        
+            <span style="margin-left: 10px; font-size: smaller;">qqq</span>
+            <p>text</p>
+         
+    </li>
+
+</div>
+    <form action="">
+        <input type="text">
+        <button>Submit</button>
+    </form>
+    <script src="./index/index.js"></script>
+</body> 
+</html>
