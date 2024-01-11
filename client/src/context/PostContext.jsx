@@ -16,7 +16,10 @@ export default function PostProvider({ children }) {
     const commentsByParentId = useMemo(() => {
         const group = {}
         comments.forEach(comment => {
+          // tạo key value: 
+          // [id] = []
           group[comment.parentId] ||= []
+          // push comment vào mảng id vừa tạo
           group[comment.parentId].push(comment)
         })
         return group

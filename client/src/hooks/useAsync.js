@@ -7,6 +7,7 @@ function useAsyncInternal(func, dependencies, initialLoading = false) {
   
     const execute = useCallback((...params) => {
       setLoading(true)
+      console.log(params,"parameters")
       return func(...params)
         .then(data => {
           setValue(data)

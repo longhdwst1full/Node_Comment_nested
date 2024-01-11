@@ -149,7 +149,7 @@ export function Comment({
               className="collapse-line"
               aria-label="Hide Replies"
               onClick={() => setAreChildrenHidden(true)}
-            />
+            >Hidden Replies</button>
             <div className="nested-comments">
               <CommentList comments={childComments} />
             </div>
